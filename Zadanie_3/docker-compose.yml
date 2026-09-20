@@ -11,7 +11,7 @@ services:
     networks:
       - Kuznetsov-DS-my-netology-hw   
 networks: 
-  Kuznetsov-DS-my-netology-hw     
+  Kuznetsov-DS-my-netology-hw:    
     ipam:
       config:
         - subnet: 10.5.0.0/16

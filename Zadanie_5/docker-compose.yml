@@ -1,17 +1,17 @@
 version: '3'
 services:
-  pgrafana:
+  grafana:
     image: grafana/grafana
     container_name: Kuznetsov-DS-netology-grafana
     ports:
       - 80:3000
     volumes:
       - grafana_data:/var/lib/grafana
-      - ./Zadanie_5/custom.ini
+      - ./custom.ini:/etc/grafana/custom.ini
     networks:
       - Kuznetsov-DS-netology-grafana  
 networks: 
-  Kuznetsov-DS-netology-grafana     
+  Kuznetsov-DS-netology-grafana:  
     ipam:
       config:
         - subnet: 10.5.0.0/16
