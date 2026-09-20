@@ -1,14 +1,17 @@
 version: '3'
 services:
-  prometheus:
-    image: prom/pushgateway:latest
-    container_name: Kuznetsov-DS-netology-pushgateway
+  pgrafana:
+    image: grafana/grafana
+    container_name: Kuznetsov-DS-netology-grafana
     ports:
-      - 9091:9091
+      - 80:3000
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./Zadanie_5/custom.ini
     networks:
-      - Kuznetsov-DS-netology-pushgateway  
+      - Kuznetsov-DS-netology-grafana  
 networks: 
-  Kuznetsov-DS-netology-pushgateway     
+  Kuznetsov-DS-netology-grafana     
     ipam:
       config:
         - subnet: 10.5.0.0/16
